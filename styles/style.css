@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+:root {
+    --azul-marinho: #0A3871;
+
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    box-sizing: border-box;
+    background-color: #F3F5FC;
+}
+
+/* Logo */
+
+#logo {
+    margin: 24px 16px;
+}
+
+/* Parte do input de texto */
+
+#texto {
+    margin: 72px 16px 16px 16px;
+    height: 250px;
+}
+
+#texto__input {
+    width: 100%;
+    height: 250px;
+    font-size: 2rem;
+    line-height: 48px;
+    resize: none;
+    border: none;
+    color: var(--azul-marinho);
+    background-color: transparent;
+}
+
+#texto__input:focus {
+    outline: none;
+}
+
+#texto__input::placeholder {
+    font-size: 2rem;
+    color: var(--azul-marinho);
+}
+
+/* Parte dos botões */
+
+#botoes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    margin: 16px;
+    margin-top: 32px;
+    box-sizing: border-box;
+}
+
+.btn {
+    text-decoration: none;
+    text-align: center;
+    padding: 24px;
+    width: 300px;
+    border-radius: 24px;
+}
+
+#crip {
+    background-color: var(--azul-marinho);
+    color: white;
+}
+
+#descrip {
+    border: 2px solid var(--azul-marinho);
+    color: var(--azul-marinho);
+}
+
+/* result */
+
+#result__container {
+    display: flex;
+
+}
+
+#result {
+    margin: 30px auto;
+    text-align: center;
+    border-radius: 32px;
+    background-color: white;
+    width: 95%;
+    box-shadow: 0px 24px 32px -8px #00000014;
+
+}
+
+#result__text {
+    margin: 32px;
+}
+#result__text img{
+    display: none;
+}
+
+@media screen and (min-width: 768px) {
+    #botoes {
+        flex-direction: row;
+        justify-content: center;
+        margin-bottom: 64px;
+        margin-top: 300px;
+    }
+
+    /* input de texto */
+    #texto__input {
+        height: 500px;
+    }
+
+    #result__container {
+        margin-bottom: 64px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    body {
+        display: flex;
+        justify-content: flex-end;
+        gap: 40px;
+        padding: 40px;
+    }
+
+    header {
+        position: absolute;
+        left: 0;
+        display: inline-block;
+        margin: 0px 100px;
+
+    }
+
+    #content {
+        position: relative;
+        top: 80px;
+        display: inline-block;
+        width: 55%;
+        height: 81.5vh;
+    }
+
+    #botoes {
+        position: absolute;
+        margin: 0;
+        bottom: 40px;
+        
+    }
+
+    #result__container {
+        position: relative;
+        width: 400px;
+        height: 90vh;
+    }
+    #result{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #result__text{
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+    #result__text img{
+        display: block;
+    }
+    #texto__input {
+        height: 630px;
+    }
+    #texto{
+        padding-left: 0;
+        margin-left: 0;
+    }
+}
