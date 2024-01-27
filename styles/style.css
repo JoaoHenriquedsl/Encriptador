@@ -2,7 +2,10 @@
 
 :root {
     --azul-marinho: #0A3871;
-
+    --cor-fundo: #F3F5FC;
+    --branco: #FFFFFF;
+    --azul-click: #3769a5;
+    --cinza-claro: #495057;
 }
 
 * {
@@ -13,10 +16,16 @@
 
 body {
     box-sizing: border-box;
-    background-color: #F3F5FC;
+    background-color: var(--cor-fundo);
 }
 
+#result .desaparecer-n {
+    display: none;
+}
 
+#result .desaparecer-e {
+    display: none;
+}
 
 /* Logo */
 
@@ -76,8 +85,8 @@ body {
 
 #crip {
     background-color: var(--azul-marinho);
-    color: white;
-    border: 2px solid #FFFFFF;
+    color: var(--branco);
+    border: 2px solid var(--branco);
 }
 
 #descrip {
@@ -101,20 +110,22 @@ body {
     color: var(--azul-marinho);
 }
 
-#copy:active, #descrip:active, #crip:active{
-    background-color: #3769a5;
-    color: white;
+#copy:active,
+#descrip:active,
+#crip:active {
+    background-color: var(--azul-click);
+    color: var(--branco);
 }
 
 
-/* result */
+/* Parte aonde aparece o código criptografado */
 
 #result__container {
     display: flex;
 }
 
 #result__encripted {
-    color: #495057;
+    color: var(--cinza-claro);
     padding: 32px 0;
     text-align: left;
 }
@@ -123,7 +134,7 @@ body {
     margin: 30px auto;
     text-align: center;
     border-radius: 32px;
-    background-color: white;
+    background-color: var(--branco);
     width: 95%;
     box-shadow: 0px 24px 32px -8px #00000014;
 
@@ -137,11 +148,13 @@ body {
     display: none;
 }
 
-#result__encripted,  #result__encripted__text {
+#result__encripted,
+#result__encripted__text {
     margin: 0 10px;
 }
-#text__e{
-    word-wrap:break-word
+
+#text__e {
+    word-wrap: break-word
 }
 
 @media screen and (min-width: 768px) {
@@ -162,7 +175,7 @@ body {
         margin-bottom: 64px;
     }
 
-    #aviso{
+    #aviso {
         position: absolute;
         display: flex;
         gap: 5px;
@@ -189,6 +202,21 @@ body {
 
     }
 
+    /* botoes */
+
+    #botoes {
+        position: absolute;
+        margin: 0;
+        bottom: 40px;
+
+    }
+
+    #copy {
+        margin-bottom: 20px;
+    }
+
+    /* Parte do input de texto */
+
     #content {
         position: relative;
         top: 80px;
@@ -197,12 +225,16 @@ body {
         height: 81.5vh;
     }
 
-    #botoes {
-        position: absolute;
-        margin: 0;
-        bottom: 40px;
-
+    #texto__input {
+        height: 60vh;
     }
+
+    #texto {
+        padding-left: 0;
+        margin-left: 0;
+    }
+
+    /* Parte aonde aparece o código criptografado */
 
     #result__container {
         position: relative;
@@ -228,15 +260,6 @@ body {
         display: block;
     }
 
-    #texto__input {
-        height: 60vh;
-    }
-
-    #texto {
-        padding-left: 0;
-        margin-left: 0;
-    }
-
     #result__btn {
         margin: 0px 0;
     }
@@ -257,17 +280,4 @@ body {
         width: 100%;
         margin: 20px 0;
     }
-
-    #copy{
-        margin-bottom: 20px;
-    }
-
-
-}
-
-#result .desaparecer-n{
-    display: none;
-}
-#result .desaparecer-e{
-    display: none;
 }

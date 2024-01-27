@@ -1,13 +1,15 @@
-let textoDoInput = document.getElementById('texto__input')
-let botaoCriptografar = document.getElementById('crip')
-let botaoDescriptografar = document.getElementById('descrip')
-let notFound = document.getElementById('result__text')
-let ecriptedText = document.getElementById('result__encripted')
-let texte = document.getElementById('text__e')
-let copyBtn = document.getElementById('copy')
+let textoDoInput = getId('texto__input')
+let botaoCriptografar = getId('crip')
+let botaoDescriptografar = getId('descrip')
+let notFound = getId('result__text')
+let ecriptedText = getId('result__encripted')
+let texte = getId('text__e')
+let copyBtn = getId('copy')
 let textoEncriptografado
 let textoDesincriptografado
 
+// ^^^^ Variaveis ^^^^
+// vvvv Functions vvvv
 
 function criptografar(texto) {
     let textoEncriptografado = texto.replaceAll('e', 'enter')
@@ -26,6 +28,12 @@ function descriptografar(texto) {
         .replaceAll('ufat', 'u')
     return textoDesincriptografado
 }
+
+function getId(elementId) {
+    return document.getElementById(elementId)
+}
+
+// vvvv Botão vvvv
 
 botaoDescriptografar.addEventListener('click', () => {
     textoDesincriptografado = descriptografar(textoDoInput.value)
@@ -57,7 +65,7 @@ botaoCriptografar.addEventListener('click', () => {
 
 })
 
-copyBtn.addEventListener('click', ()=>{
+copyBtn.addEventListener('click', () => {
     let texto = String(texte.innerHTML)
     navigator.clipboard.writeText(texto)
 })
