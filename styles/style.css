@@ -157,6 +157,12 @@ body {
     word-wrap: break-word
 }
 
+@media screen and (max-width: 353px){
+    .btn{
+        width: 250px;
+    }
+}
+
 @media screen and (min-width: 768px) {
     #botoes {
         position: relative;
