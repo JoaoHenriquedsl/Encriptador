@@ -71,7 +71,7 @@ body {
     width: 300px;
     border-radius: 24px;
     font-weight: 700;
-    
+    user-select: none;
 }
 
 #crip {
@@ -101,19 +101,11 @@ body {
     color: var(--azul-marinho);
 }
 
-#copy:hover, #descrip:hover{
-    transition: all 0.1s;
-    background-color: var(--azul-marinho);
-    color: #FFFFFF;
-    cursor: pointer;
+#copy:active, #descrip:active, #crip:active{
+    background-color: #3769a5;
+    color: white;
 }
-#crip:hover{
-    cursor: pointer;
-    transition: all 0.1s;
-    background-color: transparent;
-    color: var(--azul-marinho);
-    border: 2px solid var(--azul-marinho);
-}
+
 
 /* result */
 
@@ -154,6 +146,7 @@ body {
 
 @media screen and (min-width: 768px) {
     #botoes {
+        position: relative;
         flex-direction: row;
         justify-content: center;
         margin-bottom: 64px;
@@ -168,6 +161,16 @@ body {
     #result__container {
         margin-bottom: 64px;
     }
+
+    #aviso{
+        position: absolute;
+        display: flex;
+        gap: 5px;
+        left: 0;
+        top: -25px;
+    }
+
+
 }
 
 @media screen and (min-width: 1440px) {
@@ -226,7 +229,7 @@ body {
     }
 
     #texto__input {
-        height: 600px;
+        height: 60vh;
     }
 
     #texto {
@@ -258,6 +261,8 @@ body {
     #copy{
         margin-bottom: 20px;
     }
+
+
 }
 
 #result .desaparecer-n{

@@ -34,7 +34,7 @@ botaoDescriptografar.addEventListener('click', () => {
         notFound.classList.add('desaparecer-n')
         ecriptedText.classList.remove('desaparecer-e')
         texte.innerHTML = textoDesincriptografado
-    } else if (textoDoInput === '') {
+    } else if (textoDoInput.value === '') {
         notFound.classList.remove('desaparecer-n')
         ecriptedText.classList.add('desaparecer-e')
     }
